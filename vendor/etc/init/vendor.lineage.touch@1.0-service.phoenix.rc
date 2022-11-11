@@ -1,0 +1,67 @@
+on boot
+
+# START touch_driver
+	chown system system /sys/devices/virtual/input/lge_touch/incoming_call
+	chmod 664 /sys/devices/virtual/input/lge_touch/incoming_call
+	chown system system /sys/devices/virtual/input/lge_touch/ime_status
+	chmod 664 /sys/devices/virtual/input/lge_touch/ime_status
+	chown system system /sys/devices/virtual/input/lge_touch/pen_support
+	chmod 664 /sys/devices/virtual/input/lge_touch/pen_support
+	chown system system /sys/devices/virtual/input/lge_touch/glove_support
+	chmod 664 /sys/devices/virtual/input/lge_touch/glove_support
+	chown system system /sys/devices/virtual/input/lge_touch/keyguard
+	chmod 664 /sys/devices/virtual/input/lge_touch/keyguard
+	chown system system /sys/devices/virtual/input/lge_touch/debug_tool
+	chmod 664 /sys/devices/virtual/input/lge_touch/debug_tool
+	chown system system /sys/devices/virtual/input/lge_touch/debug_option
+	chmod 664 /sys/devices/virtual/input/lge_touch/debug_option
+	chown system system /sys/devices/virtual/input/lge_touch/vr_status
+	chmod 664 /sys/devices/virtual/input/lge_touch/vr_status
+	chown system system /sys/devices/virtual/input/lge_touch/autotune
+	chmod 664 /sys/devices/virtual/input/lge_touch/autotune
+	chown system system /sys/devices/virtual/input/lge_touch/grip_suppression
+	chmod 664 /sys/devices/virtual/input/lge_touch/grip_suppression
+	chown system system /sys/devices/virtual/input/lge_touch/app_data
+	chmod 664 /sys/devices/virtual/input/lge_touch/app_data
+	chown system system /sys/devices/virtual/input/lge_touch/film_status
+	chmod 664 /sys/devices/virtual/input/lge_touch/film_status
+# END touch_driver
+
+# START touch_knock_on
+	chown system system /sys/devices/virtual/input/lge_touch/lpwg_data
+	chmod 664 /sys/devices/virtual/input/lge_touch/lpwg_data
+	chown system system /sys/devices/virtual/input/lge_touch/lpwg_notify
+	chmod 664 /sys/devices/virtual/input/lge_touch/lpwg_notify
+	chown system system /sys/devices/virtual/input/lge_touch/q_sensitivity
+	chmod 664 /sys/devices/virtual/input/lge_touch/q_sensitivity
+	chown system system /sys/devices/virtual/input/lge_touch/swipe_enable
+	chmod 664 /sys/devices/virtual/input/lge_touch/swipe_enable
+	chown system system /sys/devices/virtual/input/lge_touch/swipe_tool
+	chmod 664 /sys/devices/virtual/input/lge_touch/swipe_tool
+	chown system system /sys/devices/virtual/input/lge_touch/lpwg_abs
+	chmod 664 /sys/devices/virtual/input/lge_touch/lpwg_abs
+	chown system system /sys/devices/virtual/input/lge_touch/voice_button
+	chmod 664 /sys/devices/virtual/input/lge_touch/voice_button
+	chown system system /sys/devices/virtual/input/lge_touch/ai_pick
+	chmod 664 /sys/devices/virtual/input/lge_touch/ai_pick
+# END touch_knock_on
+
+# Start secure_touch
+	chown system system /sys/devices/virtual/input/lge_touch/secure_touch
+	chmod 664 /sys/devices/virtual/input/lge_touch/secure_touch
+	chown system system /sys/devices/virtual/input/lge_touch/secure_touch_enable
+	chmod 664 /sys/devices/virtual/input/lge_touch/secure_touch_enable
+	chown system system /sys/devices/virtual/input/lge_touch/secure_touch_devinfo
+	chmod 664 /sys/devices/virtual/input/lge_touch/secure_touch_devinfo
+# End secure_touch
+
+# START tap2wake
+    chown system system /sys/devices/virtual/input/lge_touch/tap2wake
+    chmod 664 /sys/devices/virtual/input/lge_touch/tap2wake
+    write /sys/devices/virtual/input/lge_touch/tap2wake 1
+# END tap2wake
+
+service touch-hal-1-0 /vendor/bin/hw/vendor.lineage.touch@1.0-service.phoenix
+    class hal
+    user system
+    group system
