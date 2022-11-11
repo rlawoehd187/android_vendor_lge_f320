@@ -143,7 +143,7 @@ on boot
 service vendor.per_mgr /vendor/bin/pm-service
     class core
     user system
-    group system
+    group system net_raw
     ioprio rt 4
 
 service vendor.per_proxy /vendor/bin/pm-proxy
@@ -437,7 +437,7 @@ service vendor.sensors /vendor/bin/sscrpcd sensorspd
 service vendor.sensors.qti /vendor/bin/sensors.qti
     class core
     user system
-    group system
+    group system net_raw
     disabled
 
 service qvrd /system/bin/qvrservice
